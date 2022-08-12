@@ -6,3 +6,6 @@ bazel-*
 build
 dist
 *.egg-info
+
+# ignore docker_build
+docker_build/

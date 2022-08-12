@@ -6,7 +6,7 @@ package v1
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	any "github.com/golang/protobuf/ptypes/any"
+	anypb "google.golang.org/protobuf/types/known/anypb"
 	math "math"
 )
 
@@ -769,10 +769,10 @@ type ExternInstance struct {
 	Preamble *Preamble `protobuf:"bytes,1,opt,name=preamble,proto3" json:"preamble,omitempty"`
 	// specific to the extern type, declared in a separate vendor-specific proto
 	// file
-	Info                 *any.Any `protobuf:"bytes,2,opt,name=info,proto3" json:"info,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Info                 *anypb.Any `protobuf:"bytes,2,opt,name=info,proto3" json:"info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
 }
 
 func (m *ExternInstance) Reset()         { *m = ExternInstance{} }
@@ -807,7 +807,7 @@ func (m *ExternInstance) GetPreamble() *Preamble {
 	return nil
 }
 
-func (m *ExternInstance) GetInfo() *any.Any {
+func (m *ExternInstance) GetInfo() *anypb.Any {
 	if m != nil {
 		return m.Info
 	}
@@ -988,10 +988,10 @@ type Table struct {
 	IsConstTable bool `protobuf:"varint,10,opt,name=is_const_table,json=isConstTable,proto3" json:"is_const_table,omitempty"`
 	// architecture-specific table properties which are not part of the core P4
 	// language or of the PSA architecture.
-	OtherProperties      *any.Any `protobuf:"bytes,100,opt,name=other_properties,json=otherProperties,proto3" json:"other_properties,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	OtherProperties      *anypb.Any `protobuf:"bytes,100,opt,name=other_properties,json=otherProperties,proto3" json:"other_properties,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
 }
 
 func (m *Table) Reset()         { *m = Table{} }
@@ -1082,7 +1082,7 @@ func (m *Table) GetIsConstTable() bool {
 	return false
 }
 
-func (m *Table) GetOtherProperties() *any.Any {
+func (m *Table) GetOtherProperties() *anypb.Any {
 	if m != nil {
 		return m.OtherProperties
 	}

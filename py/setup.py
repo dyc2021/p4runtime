@@ -20,7 +20,7 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     description = "The P4 Runtime protocol",
-    long_description = open(project_root + "/README.md").read(),
+    long_description = "This is the p4runtime packet for runtime reconfig",
     long_description_content_type = "text/markdown",
     license = "Apache-2.0",
     url = "https://github.com/p4lang/p4runtime"
