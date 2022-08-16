@@ -163,6 +163,8 @@ message RuntimeReconfigEntry {
     TRIGGER = 13;
 
     CHANGE_INIT = 14;
+
+    READ_JSON = 15;
   }
   RuntimeReconfigType runtime_reconfig_type = 1;
   RuntimeReconfigContent runtime_reconfig_content = 2;
@@ -191,6 +193,8 @@ message RuntimeReconfigContent {
     TriggerEntry trigger_entry = 14;
 
     ChangeInitEntry change_init_entry = 15;
+
+    ReadJsonEntry read_json_entry = 16;
   }
 }
 
@@ -278,6 +282,10 @@ message TriggerEntry {
 message ChangeInitEntry {
   string pipeline_name = 1;
   string table_name_next = 2;
+}
+
+message ReadJsonEntry {
+  bytes p4objects_json = 1;
 }
 
 message ExternEntry {
