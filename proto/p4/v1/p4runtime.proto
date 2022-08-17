@@ -99,6 +99,7 @@ message WriteRequest {
 }
 
 message WriteResponse {
+  P4ObjectsJsonEntry p4objects_json_entry = 1;
 }
 
 message ReadRequest {
@@ -163,15 +164,13 @@ message RuntimeReconfigEntry {
     TRIGGER = 13;
 
     CHANGE_INIT = 14;
-
-    READ_JSON = 15;
   }
   RuntimeReconfigType runtime_reconfig_type = 1;
   RuntimeReconfigContent runtime_reconfig_content = 2;
 }
 
 message RuntimeReconfigContent {
-  oneof content {
+  oneof runtime_reconfig_content {
     InitP4ObjectsNewEntry init_p4objects_new_entry = 1;
 
     InsertTableEntry insert_table_entry = 2;
@@ -193,8 +192,6 @@ message RuntimeReconfigContent {
     TriggerEntry trigger_entry = 14;
 
     ChangeInitEntry change_init_entry = 15;
-
-    ReadJsonEntry read_json_entry = 16;
   }
 }
 
@@ -284,7 +281,7 @@ message ChangeInitEntry {
   string table_name_next = 2;
 }
 
-message ReadJsonEntry {
+message P4ObjectsJsonEntry {
   bytes p4objects_json = 1;
 }
 
