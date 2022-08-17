@@ -274,6 +274,7 @@ message DeleteRegisterArrayEntry {
 
 message TriggerEntry {
   bool on_or_off = 1;
+  int32 trigger_number = 2;
 }
 
 message ChangeInitEntry {
