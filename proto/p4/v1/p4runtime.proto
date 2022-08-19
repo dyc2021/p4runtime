@@ -196,7 +196,7 @@ message RuntimeReconfigContent {
 }
 
 message InitP4ObjectsNewEntry {
-  bytes p4objects_new_json = 1;
+  string p4objects_new_json = 1;
 }
 
 message InsertTableEntry {
@@ -283,7 +283,7 @@ message ChangeInitEntry {
 }
 
 message P4ObjectsJsonEntry {
-  bytes p4objects_json = 1;
+  string p4objects_json = 1;
 }
 
 message ExternEntry {
